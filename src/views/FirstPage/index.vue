@@ -7,7 +7,7 @@
             @search="onSearch"
         >
             <div slot="label" @click="selectPlace">
-                <span>北京</span>
+                <span>{{ this.$route.params.currentCity }}</span>
                 <i class="iconfont icon-arrow"></i>
             </div>
             <template #action>
@@ -107,14 +107,14 @@ export default {
         selectPlace() {
             // TODO: 跳转选择地址页面
             this.$router.push({
-                name: "City"
-            })
+                name: "City",
+            });
         },
         toMap() {
             // TODO:跳转 地图找房
             this.$router.push({
-                name: "Map"
-            })
+                name: "Map",
+            });
         },
         // 获取 groups 数据
         async getGrops() {
@@ -170,7 +170,6 @@ export default {
         height: 34px;
         line-height: 34px;
         padding-right: 0;
-
     }
 
     // 第二部分
