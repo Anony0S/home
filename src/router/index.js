@@ -1,3 +1,4 @@
+// 路由配置
 import Vue from "vue"
 import VueRouter from "vue-router"
 
@@ -8,9 +9,36 @@ export default new VueRouter({
 	routes: [
 		{
 			path: "/",
-			name: "layout",
-			component: () => import("@/views/layout")
-		}
+			redirect: "FirtPage"
+		},
+		{
+			path: "/",
+			name: "Layout",
+			component: () => import("@/views/Layout"),
+			children: [
+				{
+					path: "firtpage",
+					name: "FirtPage",
+					component: () => import("@/views/FirstPage")
+				},
+				{
+					path: "searchhose",
+					name: "SearchHose",
+					component: () => import("@/views/SearchHose")
+				},
+				{
+					path: "consolt",
+					name: "Consolt",
+					component: () => import("@/views/Consolt")
+				},
+				{
+					path: "my",
+					name: "My",
+					component: () => import("@/views/My")
+				}
+			]
+		},
+
 	]
 })
 
