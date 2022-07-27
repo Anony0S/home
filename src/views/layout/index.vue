@@ -24,7 +24,7 @@ export default {
 	methods: {
 		toFirstPage() {
 			this.$router.push({
-				name: "FirtPage",
+				name: "FirstPage",
 			})
 		},
 		toSearchHose() {

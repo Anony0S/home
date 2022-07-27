@@ -9,7 +9,7 @@ export default new VueRouter({
 	routes: [
 		{
 			path: "/",
-			redirect: "FirtPage"
+			redirect: "FirstPage"
 		},
 		{
 			path: "/",
@@ -17,8 +17,8 @@ export default new VueRouter({
 			component: () => import("@/views/Layout"),
 			children: [
 				{
-					path: "firtpage",
-					name: "FirtPage",
+					path: "firstpage",
+					name: "FirstPage",
 					component: () => import("@/views/FirstPage")
 				},
 				{
@@ -38,6 +38,16 @@ export default new VueRouter({
 				}
 			]
 		},
+		{
+			path: "/city",
+			name: "City",
+			component: () => import("@/views/City")
+		},
+		{
+			path: "/map",
+			name: "Map",
+			component: () => import("@/views/Map")
+		}
 
 	]
 })

@@ -11,7 +11,7 @@
                 <i class="iconfont icon-arrow"></i>
             </div>
             <template #action>
-                <div @click="onSearch">
+                <div @click="toMap">
                     <i class="iconfont icon-map"></i>
                 </div>
             </template>
@@ -106,7 +106,15 @@ export default {
         // 选择地址
         selectPlace() {
             // TODO: 跳转选择地址页面
-            console.log("123");
+            this.$router.push({
+                name: "City"
+            })
+        },
+        toMap() {
+            // TODO:跳转 地图找房
+            this.$router.push({
+                name: "Map"
+            })
         },
         // 获取 groups 数据
         async getGrops() {
@@ -157,6 +165,12 @@ export default {
     }
     .van-search__content {
         padding-left: 5px;
+    }
+    .van-search__action {
+        height: 34px;
+        line-height: 34px;
+        padding-right: 0;
+
     }
 
     // 第二部分
