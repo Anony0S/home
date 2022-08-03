@@ -49,5 +49,10 @@ export default new VueRouter({
 			name: "Login",
 			component: () => import("@/views/Login"),
 		},
+		{
+			path: "/collect",
+			name: "MyCollect",
+			component: () => import("@/views/My/MyCollect.vue"),
+		},
 	],
 });

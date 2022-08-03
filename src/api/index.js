@@ -1,6 +1,6 @@
 import { groups } from "./firstpage";
 import { cityList, hotCityList } from "./city";
-import { login, getUserInfo } from "./user";
+import { login, getUserInfo, myCollect } from "./user";
 
 // 租房小组 API
 export const groupsAPI = groups;
@@ -16,3 +16,6 @@ export const loginAPI = login;
 
 // 获取用户信息资料
 export const getUserInfoAPI = getUserInfo;
+
+// 我的收藏
+export const myCollectAPI = myCollect;

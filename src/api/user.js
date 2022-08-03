@@ -13,3 +13,9 @@ export const getUserInfo = () =>
 	request({
 		url: "/user",
 	});
+
+// 我的收藏
+export const myCollect = () =>
+	request({
+		url: "/user/favorites",
+	});

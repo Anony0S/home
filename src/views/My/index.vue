@@ -18,7 +18,11 @@
 			</div>
 		</div>
 		<van-grid :column-num="3" :border="false" class="login-nav" clickable>
-			<van-grid-item v-for="(value, index) in nav" :key="index">
+			<van-grid-item
+				v-for="(value, index) in nav"
+				:key="index"
+				@click="$router.push({ name: value.to })"
+			>
 				<i slot="icon" :class="'iconfont ' + value.icon"></i>
 				<span slot="text">{{ value.title }}</span>
 			</van-grid-item>
@@ -38,26 +42,32 @@ export default {
 				{
 					icon: "icon-coll",
 					title: "我的收藏",
+					to: "MyCollect",
 				},
 				{
 					icon: "icon-ind",
 					title: "我的出租",
+					to: "/my/collect",
 				},
 				{
 					icon: "icon-record",
 					title: "看房记录",
+					to: "/my/collect",
 				},
 				{
 					icon: "icon-identity",
 					title: "成为房主",
+					to: "/my/collect",
 				},
 				{
 					icon: "icon-myinfo",
 					title: "个人资料",
+					to: "/my/collect",
 				},
 				{
 					icon: "icon-cust",
 					title: "联系我们",
+					to: "/my/collect",
 				},
 			],
 			userInfo: null,
