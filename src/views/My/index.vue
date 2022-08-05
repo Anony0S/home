@@ -47,7 +47,7 @@ export default {
 				{
 					icon: "icon-ind",
 					title: "我的出租",
-					to: "/my/collect",
+					to: "MyRent",
 				},
 				{
 					icon: "icon-record",

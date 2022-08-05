@@ -1,8 +1,8 @@
 <template>
-	<div class="my-collect">
-		<van-nav-bar title="收藏列表" left-arrow @click-left="onClickLeft" />
+	<div class="my-rent">
+		<van-nav-bar title="我的出租" left-arrow @click-left="onClickLeft" />
 		<ListCell
-			v-for="(item, index) in collectList"
+			v-for="(item, index) in rentList"
 			:key="index"
 			:item="item"
 		></ListCell>
@@ -11,21 +11,21 @@
 
 <script>
 import ListCell from "@/components/list.vue";
-import { myCollectAPI } from "@/api";
+import { myRentAPI } from "@/api";
 export default {
-	name: "MyCollect",
+	name: "MyRent",
 	components: { ListCell },
 	data() {
 		return {
-			collectList: [],
+			rentList: [],
 		};
 	},
 	methods: {
 		onClickLeft() {
 			this.$router.back();
 		},
-		// 我的收藏
-		async getMyCollect() {
+		// 我的出租
+		async getRentList() {
 			this.$toast.loading({
 				message: "请稍后...",
 				overlay: true,
@@ -33,11 +33,11 @@ export default {
 				duration: 0,
 			});
 			try {
-				const { data } = await myCollectAPI();
+				const { data } = await myRentAPI();
 				console.log(data);
-				this.collectList = data.body;
+				this.rentList = data.body;
 			} catch (error) {
-				this.$toast.fail("获取收藏列表失败！");
+				this.$toast.fail("获取房源列表失败！");
 				console.log(error);
 			} finally {
 				this.$toast.clear();
@@ -45,13 +45,13 @@ export default {
 		},
 	},
 	mounted() {
-		this.getMyCollect();
+		this.getRentList();
 	},
 };
 </script>
 
 <style scoped lang="less">
-.my-collect {
+.my-rent {
 	/deep/.van-nav-bar {
 		background-color: #21b97a;
 		.van-icon {

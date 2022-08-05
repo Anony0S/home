@@ -19,3 +19,9 @@ export const myCollect = () =>
 	request({
 		url: "/user/favorites",
 	});
+
+// 查看发布房源列表
+export const myRent = () =>
+	request({
+		url: "/user/houses",
+	});

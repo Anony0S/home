@@ -1,5 +1,5 @@
 <template>
-	<div class="list-cell">
+	<div class="list-cell" @click="toDetails(item.houseCode)">
 		<van-cell>
 			<div class="left" slot="icon">
 				<img :src="'http://liufusong.top:8080' + item.houseImg" />
@@ -29,6 +29,17 @@
 export default {
 	name: "ListCell",
 	props: ["item"],
+	methods: {
+		toDetails(houseCode) {
+			// 去往详情页
+			this.$router.push({
+				name: "Detalis",
+				params: {
+					houseCode,
+				},
+			});
+		},
+	},
 };
 </script>
 

@@ -52,7 +52,22 @@ export default new VueRouter({
 		{
 			path: "/collect",
 			name: "MyCollect",
-			component: () => import("@/views/My/MyCollect.vue"),
+			component: () => import("@/views/My/MyCollect"),
+		},
+		{
+			path: "/detalis/:houseCode",
+			name: "Detalis",
+			component: () => import("@/views/Detalis"),
+			props(params) {
+				return {
+					houseCode: params.houseCode,
+				};
+			},
+		},
+		{
+			path: "/myrent",
+			name: "MyRent",
+			component: () => import("@/views/My/MyRent"),
 		},
 	],
 });
